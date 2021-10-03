@@ -11,15 +11,17 @@ float getAirfare();
 
 float getVehicleInfo();
 
-float getParkingFee(float totalDays);
+float getParkingFee();
 
-float getTaxiFee(float totalDays);
+float getTaxiFee();
+
+float getDaysUsedTaxi();
 
 float getConferenceFee();
 
-float getHotelExpenses(float totalDays);
+float getHotelExpenses();
 
-float getMealFee(float totalDays, float arrive, float depart);
+float getMealFee(float arrive, float depart);
 
 float getTotalExpenses();
 

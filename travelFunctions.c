@@ -22,14 +22,14 @@ float getDepartTime() {
    float time;
    do
    {
-      printf("Enter the time of departure on the first day of the trip: ");
+      printf("Enter the time of departure on the first day of the trip in military time: ");
       scanf("%f", &time);
 
-      if (time < 0 || time > 24)
+      if (time < 000 || time >= 2400)
       {
          printf("Time of departure invalid. Please try again.\n");
       }
-   } while (time < 0 || time > 24);
+   } while (time < 000 || time >= 2400);
    
    return time;
 }
@@ -38,14 +38,14 @@ float getArriveTime() {
    float time;
    do
    {
-      printf("Enter the time of arrival back home on the last day of the trip: ");
+      printf("Enter the time of arrival back home on the last day of the trip in military time: ");
       scanf("%f", &time);
 
-      if (time < 0 || time > 24)
+      if (time < 000 || time >= 2400)
       {
          printf("Time of arrival invalid. Please try again.\n");
       }
-   } while (time < 0 || time > 24);
+   } while (time < 000 || time >= 2400);
    
    return time;
 }
@@ -70,7 +70,7 @@ float getVehicleInfo() {
    float vehicle, milesDriven;
    do
    {
-      printf("Enter the amount of any car rentals: $");
+      printf("Enter the amount of any car rentals, 0 if none: $");
       scanf("%f", &vehicle);
 
       if (vehicle < 0)
@@ -95,11 +95,11 @@ float getVehicleInfo() {
    return vehicle;
 }
 
-float getParkingFee(float totalDays) {
+float getParkingFee() {
    float parkingFee;
    do
    {
-      printf("Enter the amount of any parking fees: $");
+      printf("Enter the amount of any parking fees, 0 if none: $");
       scanf("%f", &parkingFee);
       if (parkingFee < 0)
       {
@@ -107,14 +107,14 @@ float getParkingFee(float totalDays) {
       }
    } while (parkingFee < 0);
    
-   return parkingFee - (totalDays * 6);
+   return parkingFee;
 }
 
-float getTaxiFee(float totalDays) {
+float getTaxiFee() {
    float taxiFee;
    do
    {
-      printf("Enter the amount of any taxi fees: $");
+      printf("Enter the amount of any taxi fees, 0 if none: $");
       scanf("%f", &taxiFee);
       if (taxiFee < 0)
       {
@@ -122,7 +122,23 @@ float getTaxiFee(float totalDays) {
       }
    } while (taxiFee < 0);
    
-   return taxiFee - (totalDays * 10);
+   return taxiFee;
+}
+
+float getDaysUsedTaxi()
+{
+   float daysUsed;
+   do
+   {
+      printf("Enter the amount of days a taxi was used, 0 if none: ");
+      scanf("%f", &daysUsed);
+      if (daysUsed < 0)
+      {
+         printf("Amount of days cannot be negative. Please try again.\n");
+      }
+   } while (daysUsed < 0);
+   
+   return daysUsed;
 }
 
 float getConferenceFee() {
@@ -140,7 +156,7 @@ float getConferenceFee() {
    return conferenceFee;
 }
 
-float getHotelExpenses(float totalDays) {
+float getHotelExpenses() {
    float hotelExpenses;
    do
    {
@@ -152,11 +168,11 @@ float getHotelExpenses(float totalDays) {
       }
    } while (hotelExpenses < 0);
    
-   return hotelExpenses - (totalDays * 90);
+   return hotelExpenses;
 }
 
 
-float getMealFee(float totalDays, float arrive, float depart) {
+float getMealFee(float arrive, float depart) {
    float meals;
    do
    {
@@ -168,32 +184,33 @@ float getMealFee(float totalDays, float arrive, float depart) {
       }
    } while (meals < 0);
    
-   if (arrive <= 8)
+   if (arrive <= 800)
    {
       meals -= 9;
    }
-   else if (arrive > 8 && arrive <= 13)
+   else if (arrive > 800 && arrive <= 1300)
    {
       meals -= 12;
    }
-   else if (arrive > 13 && arrive <= 19)
-   {
-      meals -= 16;
-   }
-   if (depart <= 7)
-   {
-      meals -= 9;
-   }
-   else if (depart > 7 && depart <= 12)
-   {
-      meals -= 12;
-   }
-   else if (depart > 12 && depart <= 18)
+   else if (arrive > 1300 && arrive <= 1900)
    {
       meals -= 16;
    }
 
-   return (meals -= totalDays * (9 + 12 + 16));
+   if (depart <= 700)
+   {
+      meals -= 9;
+   }
+   else if (depart > 700 && depart <= 1200)
+   {
+      meals -= 12;
+   }
+   else if (depart > 1200 && depart <= 1800)
+   {
+      meals -= 16;
+   }
+
+   return (meals);
 }
 
 /*
