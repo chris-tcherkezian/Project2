@@ -97,7 +97,7 @@ float getPrivateVehicleInfo() {
       }
    } while (milesDriven < 0);
 
-   return milesDriven;   
+   return milesDriven * 0.27;   
 }
 
 float getParkingFee() {
