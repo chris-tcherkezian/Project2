@@ -155,10 +155,48 @@ float getHotelExpenses(float totalDays) {
    return hotelExpenses - (totalDays * 90);
 }
 
-/*
-float getMealFee() {
+
+float getMealFee(float totalDays, float arrive, float depart) {
+   float meals;
+   do
+   {
+      printf("Enter the amount of allowable meals: $");
+      scanf("%f", &meals);
+      if (meals < 0)
+      {
+         printf("Allowable meals cannot be negative. Please try again.\n");
+      }
+   } while (meals < 0);
+   
+   if (arrive <= 8)
+   {
+      meals -= 9;
+   }
+   else if (arrive > 8 && arrive <= 13)
+   {
+      meals -= 12;
+   }
+   else if (arrive > 13 && arrive <= 19)
+   {
+      meals -= 16;
+   }
+   if (depart <= 7)
+   {
+      meals -= 9;
+   }
+   else if (depart > 7 && depart <= 12)
+   {
+      meals -= 12;
+   }
+   else if (depart > 12 && depart <= 18)
+   {
+      meals -= 16;
+   }
+
+   return (meals -= totalDays * (9 + 12 + 16));
 }
 
+/*
 float getTotalExpenses() {
 
 }
