@@ -22,7 +22,8 @@ float getDepartTime() {
    float time;
    do
    {
-      printf("Enter the time of departure on the first day of the trip in military time: ");
+      printf("Enter the time of departure on the first day of the trip ");
+      printf("in military time (ex: if 1:30pm, enter 1330): ");
       scanf("%f", &time);
 
       if (time < 000 || time >= 2400)
@@ -38,7 +39,8 @@ float getArriveTime() {
    float time;
    do
    {
-      printf("Enter the time of arrival back home on the last day of the trip in military time: ");
+      printf("Enter the time of arrival back home on the last day of the trip ");
+      printf("in military time (ex: if 1:30pm, enter 1330): ");
       scanf("%f", &time);
 
       if (time < 000 || time >= 2400)
