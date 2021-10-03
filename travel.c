@@ -9,14 +9,15 @@ int main()
     //Excess expenses business person owes
     //The amount saved by the bussiness person if the expenses were under the total allowed
 
-    float totalDays, depart, arrive, airfare, carRental, parkingFee, taxiFee, daysUsedTaxi, conferenceFee, hotelFee, mealFee;
+    float totalDays, depart, arrive, airfare, carRental, privateVehicle, parkingFee, taxiFee, daysUsedTaxi, conferenceFee, hotelFee, mealFee;
     float totalExpenses, totalAllowableExpenses, totalReimburse, totalSaved;
 
     totalDays = getTotalDays();
     depart = getDepartTime();
     arrive = getArriveTime();
     airfare = getAirfare();
-    carRental = getVehicleInfo();
+    carRental = getCarRental();
+    privateVehicle = getPrivateVehicleInfo();
     parkingFee = getParkingFee();
     taxiFee = getTaxiFee();
     daysUsedTaxi = getDaysUsedTaxi();

@@ -68,33 +68,36 @@ float getAirfare() {
    return airfare;
 }
 
-float getVehicleInfo() {
-   float vehicle, milesDriven;
+float getCarRental() {
+   float rental;
    do
    {
       printf("Enter the amount of any car rentals, 0 if none: $");
-      scanf("%f", &vehicle);
+      scanf("%f", &rental);
 
-      if (vehicle < 0)
+      if (rental < 0)
       {
          printf("Amount of car rentals cannot be negative. Please try again.\n");
       }
-      else if (vehicle == 0)
-      {
-         do
-         {
-            printf("Enter the miles driven of the private vehicle: ");
-            scanf("%f", &milesDriven);
-            if (milesDriven < 0)
-            {
-               printf("Miles driven cannot be negative. Please try again.\n");
-            }
-         } while (milesDriven < 0);
-         vehicle = milesDriven * 0.27;
-      }
-   } while (vehicle < 0);
+   } while (rental < 0);
    
-   return vehicle;
+   return rental;
+}
+
+float getPrivateVehicleInfo() {
+   float milesDriven;
+   do
+   {
+      printf("Enter the miles driven of a private vehicle, 0 if none: ");
+      scanf("%f", &milesDriven);
+
+      if (milesDriven < 0)
+      {
+         printf("Miles driven cannot be negative. Please try again.\n");
+      }
+   } while (milesDriven < 0);
+
+   return milesDriven;   
 }
 
 float getParkingFee() {
@@ -103,6 +106,7 @@ float getParkingFee() {
    {
       printf("Enter the amount of any parking fees, 0 if none: $");
       scanf("%f", &parkingFee);
+
       if (parkingFee < 0)
       {
          printf("Parking fees cannot be negative. Please try again.\n");
@@ -118,6 +122,7 @@ float getTaxiFee() {
    {
       printf("Enter the amount of any taxi fees, 0 if none: $");
       scanf("%f", &taxiFee);
+
       if (taxiFee < 0)
       {
          printf("Taxi fees cannot be negative. Please try again.\n");
@@ -134,6 +139,7 @@ float getDaysUsedTaxi()
    {
       printf("Enter the amount of days a taxi was used, 0 if none: ");
       scanf("%f", &daysUsed);
+
       if (daysUsed < 0)
       {
          printf("Amount of days cannot be negative. Please try again.\n");
@@ -149,6 +155,7 @@ float getConferenceFee() {
    {
       printf("Enter the amount of any conference or seminar registration fees: $");
       scanf("%f", &conferenceFee);
+
       if (conferenceFee < 0)
       {
          printf("Conference/seminar registration fees cannot be negative. Please try again.\n");
@@ -164,6 +171,7 @@ float getHotelExpenses() {
    {
       printf("Enter the amount of any hotel expenses: $");
       scanf("%f", &hotelExpenses);
+
       if (hotelExpenses < 0)
       {
          printf("Hotel expenses cannot be negative. Please try again.\n");
@@ -180,6 +188,7 @@ float getMealFee() {
    {
       printf("Enter the amount of allowable meals: $");
       scanf("%f", &mealsAllowed);
+
       if (mealsAllowed < 0)
       {
          printf("Allowable meals cannot be negative. Please try again.\n");

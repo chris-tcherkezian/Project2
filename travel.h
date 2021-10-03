@@ -9,7 +9,9 @@ float getArriveTime();
 
 float getAirfare();
 
-float getVehicleInfo();
+float getCarRental();
+
+float getPrivateVehicleInfo();
 
 float getParkingFee();
 
