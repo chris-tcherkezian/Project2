@@ -22,7 +22,7 @@ int main()
     daysUsedTaxi = getDaysUsedTaxi();
     conferenceFee = getConferenceFee();
     hotelFee = getHotelExpenses();
-    mealFee = getMealFee(arrive, depart);
+    mealFee = getMealFee();
 
     // totalExpenses = getTotalExpenses();
     // totalAllowableExpenses = getTotalAllowableExpenses();

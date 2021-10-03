@@ -21,7 +21,7 @@ float getConferenceFee();
 
 float getHotelExpenses();
 
-float getMealFee(float arrive, float depart);
+float getMealFee();
 
 float getTotalExpenses();
 

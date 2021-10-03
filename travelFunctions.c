@@ -172,45 +172,19 @@ float getHotelExpenses() {
 }
 
 
-float getMealFee(float arrive, float depart) {
-   float meals;
+float getMealFee() {
+   float mealsAllowed;
    do
    {
       printf("Enter the amount of allowable meals: $");
-      scanf("%f", &meals);
-      if (meals < 0)
+      scanf("%f", &mealsAllowed);
+      if (mealsAllowed < 0)
       {
          printf("Allowable meals cannot be negative. Please try again.\n");
       }
-   } while (meals < 0);
-   
-   if (arrive <= 800)
-   {
-      meals -= 9;
-   }
-   else if (arrive > 800 && arrive <= 1300)
-   {
-      meals -= 12;
-   }
-   else if (arrive > 1300 && arrive <= 1900)
-   {
-      meals -= 16;
-   }
+   } while (mealsAllowed < 0);
 
-   if (depart <= 700)
-   {
-      meals -= 9;
-   }
-   else if (depart > 700 && depart <= 1200)
-   {
-      meals -= 12;
-   }
-   else if (depart > 1200 && depart <= 1800)
-   {
-      meals -= 16;
-   }
-
-   return (meals);
+   return (mealsAllowed);
 }
 
 /*
