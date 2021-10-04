@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "travel.h"
+#include "expense.h"
 
 int main() 
 {
@@ -11,6 +12,7 @@ int main()
 
     float totalDays, depart, arrive, airfare, carRental, privateVehicle, parkingFee, taxiFee, daysUsedTaxi, conferenceFee, hotelFee, mealFee;
     float totalExpenses, totalAllowableExpenses, totalReimburse, totalSaved;
+
 
     totalDays = getTotalDays();
     depart = getDepartTime();
@@ -25,10 +27,10 @@ int main()
     hotelFee = getHotelExpenses();
     mealFee = getMealFee();
 
-    // totalExpenses = getTotalExpenses();
-    // totalAllowableExpenses = getTotalAllowableExpenses();
-    // totalReimburse = getTotalReimburse();
-    // totalSaved = getTotalSaved();
+    totalExpenses = getTotalExpenses(airfare, carRental, privateVehicle, parkingFee, taxiFee, conferenceFee, hotelFee, mealFee);
+    totalAllowableExpenses = getTotalAllowableExpenses(totalDays, taxiDays, arrive, depart);
+    totalReimburse = getTotalReimburse(totalExpenses, totalAllowableExpenses);
+    totalSaved = getTotalSaved(totalExpenses, totalAllowableExpenses);
 
     printf("Your total expenses incurred during this business trip was: $%.2f\n", totalExpenses);
     printf("The total allowable expenses for the trip was: $%.2f\n", totalAllowableExpenses);
