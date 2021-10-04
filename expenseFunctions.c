@@ -43,7 +43,7 @@ float getTotalReimburse(float total, float allowable)
 {
     float price = total - allowable;
     float reimburseCost;
-    if(reimbusePrice <= 0)
+    if(price <= 0)
         reimburseCost = 0;
     else
         reimburseCost = price;

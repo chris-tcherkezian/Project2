@@ -13,7 +13,6 @@ int main()
     float totalDays, depart, arrive, airfare, carRental, privateVehicle, parkingFee, taxiFee, daysUsedTaxi, conferenceFee, hotelFee, mealFee;
     float totalExpenses, totalAllowableExpenses, totalReimburse, totalSaved;
 
-
     totalDays = getTotalDays();
     depart = getDepartTime();
     arrive = getArriveTime();
@@ -28,7 +27,7 @@ int main()
     mealFee = getMealFee();
 
     totalExpenses = getTotalExpenses(airfare, carRental, privateVehicle, parkingFee, taxiFee, conferenceFee, hotelFee, mealFee);
-    totalAllowableExpenses = getTotalAllowableExpenses(totalDays, taxiDays, arrive, depart);
+    totalAllowableExpenses = getTotalAllowableExpenses(totalDays, daysUsedTaxi, arrive, depart);
     totalReimburse = getTotalReimburse(totalExpenses, totalAllowableExpenses);
     totalSaved = getTotalSaved(totalExpenses, totalAllowableExpenses);
 

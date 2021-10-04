@@ -25,12 +25,4 @@ float getHotelExpenses();
 
 float getMealFee();
 
-float getTotalExpenses();
-
-float getTotalAllowableExpenses();
-
-float getTotalReimburse();
-
-float getTotalSaved();
-
 #endif
