@@ -55,7 +55,7 @@ float getTotalSaved(float total, float allowable)
 {
     float price = allowable - total;
     float savedMoney;
-    if(savedMoney <= 0)
+    if(price <= 0)
         savedMoney = 0;
     else
         savedMoney = price;
