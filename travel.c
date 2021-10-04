@@ -1,3 +1,14 @@
+/**
+  * Christian Badoy, Gabrielle David, Christopher Tcherkezian
+  * Professor Davarpanah
+  * CS 2600-02
+  * 3 October 2021
+  *
+  * Travel Expenses Project 2
+  * The purpose of this program is to calculate expenses that a businessperson incurred
+  * during the trip and to display costs the person owes or has saved during the business trip
+  * 
+ **/
 #include <stdio.h>
 #include <stdlib.h>
 #include "travel.h"
